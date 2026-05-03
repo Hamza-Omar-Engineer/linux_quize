@@ -1,0 +1,223 @@
+:root {
+    --bg-dark: #050505;
+    --accent-blue: #007bff;
+    --accent-purple: #4a064a;
+    --text-white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.05);
+    --current-accent: var(--accent-blue);
+}
+
+* { margin: 0;
+ padding: 0; 
+ box-sizing: border-box; 
+ font-family: 'Cairo', sans-serif;
+ }
+
+body { background-color: var(--bg-dark); 
+color: var(--text-white); 
+overflow-x: hidden; min-height: 100vh; 
+display: flex; justify-content: center; 
+align-items: center;
+}
+
+.marble-overlay { 
+position: fixed; 
+top: 0; left: 0; 
+width: 100%; 
+height: 100%; 
+background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); 
+opacity: 0.2; 
+z-index: -1; 
+}
+
+body.male-theme {
+--current-accent: var(--accent-blue); 
+}
+body.female-theme {
+--current-accent: var(--accent-purple); 
+}
+
+/* --- تنسيق قسم اختيار الجنس (الفخم) --- */
+.gender-selection {
+    display: flex;
+    gap: 15px; /* مسافة أنيقة بين المربعين */
+    margin: 20px 0; /* مسافة فوق وتحت القسم */
+    width: 100%;
+    justify-content: center; /* توسيط المربعات */
+}
+
+.gender-btn {
+    flex: 1; /* لتوزيع العرض بالتساوي */
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.7); /* خلفية سوداء غامقة ليتضح النص الأبيض */
+    border: 2px solid var(--current-accent); /* إطار بلون الثيم (الأزرق أو البنفسجي) */
+    color: #ffffff; /* نص أبيض واضح */
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 12px; /* حواف ناعمة */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* حركة سلسة */
+    text-transform: uppercase; /* لمسة هندسية */
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0.8; /* شفافية خفيفة جداً في الحالة العادية */
+}
+
+/* تأثير عند مرور الماوس (Hover) */
+.gender-btn:hover {
+    opacity: 1; /* وضوح كامل */
+    background: rgba(var(--current-accent), 0.1); /* خلفية بلون الثيم ولكن شفافة جداً */
+    transform: translateY(-3px); /* حركة للأعلى بسيطة */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* ظل لإعطاء عمق */
+}
+
+/* التنسيق عند اختيار المربع (Active State) */
+.gender-btn.active {
+    opacity: 1; /* وضوح كامل */
+    background: var(--current-accent); /* يصبح المربع كاملاً بلون الثيم (الأزرق أو البنفسجي) */
+    color: #000000; /* النص يصبح أسود ليتضح فوق اللون الفاتح */
+    font-weight: 900;
+    box-shadow: 0 0 25px var(--current-accent); /* توهج (Glow) هندسي قوي */
+}
+
+/* لمسة فنية خفيفة داخل المربع المفعل */
+.gender-btn.active::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%);
+    pointer-events: none;
+}
+
+/* العيون المتحركة */
+.eyes-container { 
+display: flex; 
+justify-content: center; 
+gap: 20px; 
+margin-bottom: 20px; 
+}
+.eye {
+width: 70px; 
+height: 70px; 
+background: white; 
+border-radius: 50%; 
+position: relative; 
+box-shadow: 0 0 15px var(--current-accent); 
+}
+.pupil { 
+width: 30px; 
+height: 30px; 
+background: #000; 
+border-radius: 50%; 
+position: absolute; 
+border: 3px solid var(--current-accent); 
+top: 50%;
+left: 50%; 
+transform: translate(-50%, -50%); 
+}
+
+section { 
+display: none; 
+width: 95%; 
+max-width: 600px; 
+animation: fadeIn 0.5s ease; 
+}
+section.active { 
+display: block; 
+}
+@keyframes fadeIn {
+from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+     } 
+     to 
+     { opacity: 1; 
+       transform: translateY(0); 
+     } }
+
+.glass-card, .question-card, .result-plaque { 
+background: var(--glass); 
+backdrop-filter: blur(10px); 
+border: 1px solid var(--current-accent); 
+padding: 30px; 
+border-radius: 20px; 
+text-align: center; 
+}
+
+input {
+width: 100%; 
+padding: 15px; 
+margin: 20px 0; 
+background: #000; 
+border: 1px solid var(--current-accent); 
+color: #fff; 
+border-radius: 10px; 
+text-align: center; 
+}
+
+.action-buttons {
+display: flex; 
+gap: 10px; 
+}
+.main-btn { 
+flex: 1; 
+padding: 15px; 
+background: var(--current-accent); 
+color: #000; 
+border: none; 
+font-weight: bold; 
+border-radius: 10px; 
+cursor: pointer; 
+transition: 0.3s; 
+}
+.ai-btn {
+background: #28a745; 
+color: #fff; 
+}
+.main-btn:hover { 
+transform: scale(1.05); 
+box-shadow: 0 0 20px var(--current-accent); 
+}
+
+.options-grid { 
+display: grid; 
+gap: 10px; 
+margin-top: 20px; 
+}
+.option { 
+padding: 15px; 
+background: rgba(255,255,255,0.05); 
+border: 1px solid rgba(255,255,255,0.1); 
+border-radius: 10px; 
+cursor: pointer; 
+transition: 0.3s; 
+}
+.option:hover { 
+border-color: var(--current-accent); 
+background: rgba(255,255,255,0.1); 
+}
+.option.correct { 
+background: #28a745 !important; 
+}
+.option.wrong { 
+background: #dc3545 !important; 
+}
+
+.fakhama-text { 
+font-size: 2.5rem; 
+font-weight: 900; color: gold; 
+margin: 15px 0; 
+}
+.score-circle { 
+width: 100px; 
+height: 100px; 
+border: 4px solid var(--current-accent); 
+border-radius: 50%; 
+display: flex; 
+align-items: center; 
+justify-content: center; 
+margin: 20px auto; 
+font-size: 1.5rem; 
+font-weight: bold; 
+}

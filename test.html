@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linux Mastery | Hamza Omar</title>
+    <link rel="stylesheet" href="test.css" />
+  </head>
+  <body class="male-theme">
+    <div class="marble-overlay"></div>
+
+    <section id="landing-page" class="active">
+      <div class="eyes-container">
+        <div class="eye"><div class="pupil"></div></div>
+        <div class="eye"><div class="pupil"></div></div>
+      </div>
+
+      <div class="glass-card">
+        <h1>نظام إتقان لينوكس</h1>
+        <p>مشروع مادة نظم التشغيل - إشراف حمزة عمر</p>
+
+        <input
+          type="text"
+          id="student-name"
+          placeholder="أدخل اسمك الكامل..."
+          autocomplete="off"
+        />
+
+        <div class="gender-selection">
+          <button type="button" class="gender-btn active" data-gender="male">
+            ذكر
+          </button>
+          <button type="button" class="gender-btn" data-gender="female">
+            أنثى
+          </button>
+        </div>
+
+        <div class="action-buttons">
+          <button id="start-btn" class="main-btn">بدء الاختبار أونلاين</button>
+          <label for="ai-upload" class="main-btn ai-btn">
+            تصحيح الورقة بالذكاء الاصطناعي 📷
+            <input
+              type="file"
+              id="ai-upload"
+              accept="image/*"
+              style="display: none"
+            />
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz-page">
+      <div class="quiz-header">
+        <span id="question-number">السؤال 1/10</span>
+        <div id="timer">الوقت: 00:00</div>
+      </div>
+
+      <div class="question-card">
+        <h2 id="question-text">جاري تحميل السؤال...</h2>
+        <div id="options-container" class="options-grid"></div>
+        <div
+          id="explanation-container"
+          class="explanation-box"
+          style="display: none"
+        >
+          <strong>الشرح:</strong> <span id="explanation-text"></span>
+        </div>
+        <button id="next-btn" class="main-btn" style="display: none">
+          السؤال التالي
+        </button>
+      </div>
+    </section>
+
+    <section id="result-page">
+      <div class="result-plaque">
+        <div class="plaque-inner">
+          <h2 id="congrats-title">تم الإنجاز بنجاح</h2>
+          <div id="display-name" class="fakhama-text">اسم الطالب</div>
+          <p id="result-message">لقد حققت مستوى ممتاز في نظم التشغيل!</p>
+          <div class="score-circle">
+            <span id="final-score">0%</span>
+          </div>
+          <button onclick="location.reload()" class="main-btn">
+            إعادة المحاولة
+          </button>
+        </div>
+      </div>
+      <p class="developer-credit">
+        Linux Mastery System v4.0 | Engineered by Hamza Omar
+      </p>
+    </section>
+
+    <script src="test.js"></script>
+  </body>
+</html>
