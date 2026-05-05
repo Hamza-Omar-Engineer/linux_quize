@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Linux Mastery | Hamza Omar</title>
+    <title>C# Mastery | Engineered by Hamza Omar</title>
     <link rel="stylesheet" href="test.css" />
   </head>
   <body class="male-theme">
@@ -14,18 +14,15 @@
         <div class="eye"><div class="pupil"></div></div>
         <div class="eye"><div class="pupil"></div></div>
       </div>
-
       <div class="glass-card">
-        <h1>نظام إتقان لينوكس</h1>
-        <p>مشروع مادة نظم التشغيل - إشراف حمزة عمر</p>
-
+        <h1>إتقان لغة C# (OOP)</h1>
+        <p>نظام الاختبارات الذكي - إشراف المشرف حمزة عمر</p>
         <input
           type="text"
           id="student-name"
           placeholder="أدخل اسمك الكامل..."
           autocomplete="off"
         />
-
         <div class="gender-selection">
           <button type="button" class="gender-btn active" data-gender="male">
             ذكر
@@ -34,39 +31,46 @@
             أنثى
           </button>
         </div>
-
-        <div class="action-buttons">
-          <button id="start-btn" class="main-btn">بدء الاختبار أونلاين</button>
-          <label for="ai-upload" class="main-btn ai-btn">
-            تصحيح الورقة بالذكاء الاصطناعي 📷
-            <input
-              type="file"
-              id="ai-upload"
-              accept="image/*"
-              style="display: none"
-            />
-          </label>
-        </div>
+        <button id="start-btn" class="main-btn">دخول الاختبار البرمجي</button>
       </div>
     </section>
 
     <section id="quiz-page">
       <div class="quiz-header">
-        <span id="question-number">السؤال 1/10</span>
+        <span id="question-number">السؤال 1/5</span>
         <div id="timer">الوقت: 00:00</div>
       </div>
-
       <div class="question-card">
-        <h2 id="question-text">جاري تحميل السؤال...</h2>
+        <h2 id="question-text">جاري تحميل التحدي...</h2>
+
         <div id="options-container" class="options-grid"></div>
+
+        <div id="coding-container" style="display: none">
+          <textarea
+            id="code-input"
+            spellcheck="false"
+            placeholder="Write your C# code here..."
+          ></textarea>
+          <div class="ai-status" id="ai-status"></div>
+        </div>
+
         <div
           id="explanation-container"
           class="explanation-box"
           style="display: none"
         >
-          <strong>الشرح:</strong> <span id="explanation-text"></span>
+          <strong>ملاحظة الذكاء الاصطناعي:</strong>
+          <span id="explanation-text"></span>
         </div>
-        <button id="next-btn" class="main-btn" style="display: none">
+
+        <button id="submit-btn" class="main-btn" style="margin-top: 15px">
+          تأكيد الإجابة
+        </button>
+        <button
+          id="next-btn"
+          class="main-btn"
+          style="display: none; margin-top: 15px"
+        >
           السؤال التالي
         </button>
       </div>
@@ -75,20 +79,16 @@
     <section id="result-page">
       <div class="result-plaque">
         <div class="plaque-inner">
-          <h2 id="congrats-title">تم الإنجاز بنجاح</h2>
-          <div id="display-name" class="fakhama-text">اسم الطالب</div>
-          <p id="result-message">لقد حققت مستوى ممتاز في نظم التشغيل!</p>
-          <div class="score-circle">
-            <span id="final-score">0%</span>
-          </div>
+          <h2 id="congrats-title">نتائج المذاكرة</h2>
+          <div id="display-name" class="fakhama-text"></div>
+          <p id="result-message"></p>
+          <div class="score-circle"><span id="final-score">0%</span></div>
           <button onclick="location.reload()" class="main-btn">
-            إعادة المحاولة
+            إعادة الاختبار
           </button>
         </div>
       </div>
-      <p class="developer-credit">
-        Linux Mastery System v4.0 | Engineered by Hamza Omar
-      </p>
+      <p class="developer-credit">Hamza Omar Systems | Powered by Gemini AI</p>
     </section>
 
     <script src="test.js"></script>
